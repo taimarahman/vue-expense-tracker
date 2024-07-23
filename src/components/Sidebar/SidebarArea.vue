@@ -41,7 +41,7 @@ const userLogout = () => {
                 <!-- MENU LIST -->
                 <nav class="my-8 overflow-y-auto text-white">
                     <ul class="menu-list">
-                        <li><router-link to="/dashboard" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-tv"></i> Dashboard</router-link></li>
+                        <li><router-link to="/taima/dashboard" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-tv"></i> Dashboard</router-link></li>
                         <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-file-invoice-dollar"></i>Expenses</router-link></li>
                         <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-money-bill-transfer"></i> Transactions</router-link></li>
                         <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-piggy-bank"></i>Savings</router-link></li>
