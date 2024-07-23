@@ -1,19 +1,10 @@
+import { meta } from 'eslint-plugin-prettier'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
 
-  { path: '/', redirect: { name: 'dashboard' } },
-
-  {
-    meta: {
-      title: 'Dashboard'
-    },
-    path: '/dashboard',
-    name: 'dashboard',
-    component: () => import("../views/DashboardView.vue")
-  },
-
+  { path: '/', redirect: { name: 'user-login' } },
   {
     meta: {
       title: 'User Login'
@@ -24,26 +15,17 @@ const routes = [
   },
 
   {
-    meta: {
-      title: 'Update Profile'
-    },
-    path: '/:username/edit-profile',
-    name: 'edit-profile',
-    component: () => import("../views/ProfileView.vue")
+    path: '/:username/',
+    component: () => import("../views/MainView.vue"),
+    name: 'user-view',
+    children: [
+      { path: 'dashboard', name: 'dashboard', component: () => import("../views/pages/DashboardView.vue"), meta:{ title: 'Dashboard'}},
+      { path: 'edit-profile', name: 'edit-profile', component: () => import("../views/pages/ProfileView.vue"), meta: {title: 'Update Profile'} },
+    ],
+    // meta: {
+    //   title: 'Authentication'
+    // }
   },
-  
-  // {
-  //   path: '/:companyName/',
-  //   component: CandidateLoginView,
-  //   name: 'candidateView',
-  //   children: [
-  //     { path: 'login', name: 'login', component: LoginForm },
-  //     { path: 'signup', name: 'signup', component: SignupForm },
-  //   ],
-  //   meta: {
-  //     title: 'Authentication'
-  //   }
-  // },
   
 
 ]

@@ -6,8 +6,10 @@ import { helpers, required } from '@vuelidate/validators'
 import useVuelidate from "@vuelidate/core";
 import { useToastStore } from "../stores/toast";
 import router from "../router";
+import { useAuthenticationStore } from "../stores/authStore";
 
 const toastStore = useToastStore()
+const authStore = useAuthenticationStore()
 
 const reqData = reactive({
     username: '',
@@ -23,7 +25,7 @@ const v$ = useVuelidate(rules, reqData)
 
 const userLogin = async ()=> {
     if(await v$.value.$validate()){
-        router.push({name: 'dashboard'})
+        router.push({name: 'dashboard', params: {username: 'taima'}} )
     } else {
         toastStore.error(v$.value.$errors[0].$message)
     }
@@ -31,7 +33,7 @@ const userLogin = async ()=> {
 }
 
 onMounted(()=>{
-    // reqData.username = 'taima'
+    authStore.unauthorizeUser()
 })
 
 

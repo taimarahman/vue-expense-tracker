@@ -1,6 +1,6 @@
 <script setup>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import { useNavigationStore } from '../stores/navigationStore';
+import { useNavigationStore } from '../../stores/navigationStore';
 import { onBeforeRouteUpdate } from 'vue-router';
 import { onBeforeUnmount, onMounted } from 'vue';
 
