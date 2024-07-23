@@ -2,12 +2,33 @@
 import { onMounted, reactive, watch } from "vue";
 import InputOne from "../components/Inputs/InputOne.vue"
 import LogoEl from '@/components/Ui-Elements/LogoEl.vue';
+import { helpers, required } from '@vuelidate/validators'
+import useVuelidate from "@vuelidate/core";
+import { useToastStore } from "../stores/toast";
+import router from "../router";
 
+const toastStore = useToastStore()
 
 const reqData = reactive({
     username: '',
     password: ''
 })
+
+const rules = {
+    username: { required: helpers.withMessage('Please enter your username!', required) },
+    password: { required: helpers.withMessage('Please enter your password!', required) },
+}
+const v$ = useVuelidate(rules, reqData)
+
+
+const userLogin = async ()=> {
+    if(await v$.value.$validate()){
+        router.push({name: 'dashboard'})
+    } else {
+        toastStore.error(v$.value.$errors[0].$message)
+    }
+
+}
 
 onMounted(()=>{
     // reqData.username = 'taima'
@@ -20,7 +41,7 @@ onMounted(()=>{
         <div class=" p-12 rounded-xl bg-gradient space-y-8 text-white text-center">
             <LogoEl :size="'xl'" class="border-4 border-double rounded p-4"/>
             <h1 class="text-3xl font-bold">Login</h1>
-            <form class="space-y-8 text-dark" @submit.prevent="">
+            <form class="space-y-8 text-dark" @submit.prevent="userLogin()">
                 <div class="space-y-4">
                     <InputOne type="text" v-model="reqData.username" placeholder="Username" :style="'input-capsule'"/>
                     <InputOne type="password" v-model="reqData.password" placeholder="Password" :style="'input-capsule'"/>
