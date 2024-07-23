@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { isReadonly, ref, watch } from 'vue';
 
 const props = defineProps({
    type : { 
@@ -12,6 +12,11 @@ const props = defineProps({
     placeholder: {
         type: String,
         default: 'Enter here'
+    },
+
+    readonly: {
+        type: Boolean,
+        default: false
     },
     style: {
         type: String,
@@ -40,9 +45,9 @@ watch(
 <template >
     <div class="relative">
         
-        <input v-if="type!='password'" :type=type v-model="localModelValue" class="input peer" :class="style">
+        <input v-if="type!='password'" :type=type v-model="localModelValue" class="input peer" :class="style" :readOnly="readonly">
 
-        <input v-else :type="showPassword ? 'text': 'password'" v-model="localModelValue" class="input peer" :class="style">
+        <input v-else :type="showPassword ? 'text': 'password'" v-model="localModelValue" class="input peer" :class="style" :readOnly="readonly">
 
         <!-- PLACEHOLDER/LABEL -->
         <label :class="localModelValue ? 'input-label-top' : 'input-label-transition'">{{ placeholder }}</label>

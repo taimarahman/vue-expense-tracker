@@ -46,14 +46,35 @@
         @apply bg-secondary-600 text-white
     }
 
-    .btn-secondary.disabled{
-        @apply bg-secondary-300
+   
+
+    .btn-secondary{
+        @apply bg-secondary-600 text-white
+    }
+    .btn-primary{
+        @apply bg-primary-600 text-white
     }
 
+    .btn-primary-light{
+        @apply bg-primary-300 text-white
+    }
+
+   
+
     /* BUTTON OULINE */
-    .btn-outline-secondary{
+    /* .btn-outline-secondary{
+        @apply bg-transparent border border-secondary-600 focus:border-secondary-600
+    } */
+
+
+    .btn.disabled{
+        @apply opacity-50
+    } 
+
+    .btn-outline{
         @apply bg-transparent border border-secondary-600 focus:border-secondary-600
     }
+
     .btn-outline{
         @apply bg-transparent border border-current focus:border-secondary-600
     }

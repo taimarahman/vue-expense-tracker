@@ -31,9 +31,9 @@ const userLogout = () => {
                         <router-link to="/jenna/edit-profile" class="cursor-pointer size-full flex-center"><i class="fa-regular fa-pen-to-square"></i></router-link>
                     </div>
                     <!-- USER INFO -->
-                    <img class="w-24 h-24 rounded-full mx-auto ring ring-white" src="@/assets/images/user/user-07.png" alt="profile image" width="384" height="512">
+                    <img class="w-24 h-24 object-cover rounded-full mx-auto ring ring-white" src="@/assets/images/cards/cards-04.png" alt="profile image">
                     <div class="pt-4 text-white text-center">
-                        <p class=" text-xl font-bold capitalize">jenna ortega</p>
+                        <p class=" text-xl font-bold capitalize">haris mortage</p>
                         <p class="text-lg flex-center font-alumni"><i class="fa-solid fa-dollar-sign text-xs mr-1"></i> 23,456</p>
                     </div>
                 </div>
