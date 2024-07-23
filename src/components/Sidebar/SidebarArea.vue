@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import LogoEl from '../Ui-Elements/LogoEl.vue';
+import { useNavigationStore } from '../../stores/navigationStore';
 
-const navCollapse = ref(false)
+const navStore =  useNavigationStore()
+const navCollapse = computed(()=> navStore.hideNav)
 </script>
 
 <template>
