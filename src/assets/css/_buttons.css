@@ -1,0 +1,60 @@
+@layer components {
+    .btn{
+        @apply min-h-10 px-4 focus:ring-0
+    } 
+    .btn-sm{
+        @apply min-h-8 px-2 focus:ring-0
+    } 
+
+    .wide {
+        @apply !px-8
+    }   
+    .wider {
+        @apply !px-12
+    }
+    .widest {
+        @apply !px-16
+    }
+
+    /* BUTTON CAPSULE */
+    .btn-capsule{
+        @apply btn rounded-full
+    }
+    .btn-capsule-sm{
+        @apply btn-sm rounded-full
+    }
+    .btn-capsule-block{
+        @apply btn-capsule w-full
+    }
+
+    /* BUTTON SQUARE */
+    .btn-square{
+        @apply btn rounded
+    }
+    .btn-square-sm{
+        @apply btn-sm rounded
+    }
+    .btn-square-wide{
+        @apply btn-square wide
+    }
+    .btn-square-block{
+        @apply btn-square w-full
+    }
+
+    /* BUTTON COLORS */
+    .btn-secondary{
+        @apply bg-secondary-600 text-white
+    }
+
+    .btn-secondary.disabled{
+        @apply bg-secondary-300
+    }
+
+    /* BUTTON OULINE */
+    .btn-outline-secondary{
+        @apply bg-transparent border border-secondary-600 focus:border-secondary-600
+    }
+    .btn-outline{
+        @apply bg-transparent border border-current focus:border-secondary-600
+    }
+}

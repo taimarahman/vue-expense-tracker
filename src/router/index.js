@@ -5,7 +5,6 @@ const routes = [
 
   { path: '/', redirect: { name: 'dashboard' } },
 
-
   {
     meta: {
       title: 'Dashboard'
@@ -15,6 +14,14 @@ const routes = [
     component: () => import("../views/DashboardView.vue")
   },
 
+  {
+    meta: {
+      title: 'User Login'
+    },
+    path: '/auth/login',
+    name: 'userLogin',
+    component: () => import("../views/LoginView.vue")
+  },
   
   // {
   //   path: '/:companyName/',
