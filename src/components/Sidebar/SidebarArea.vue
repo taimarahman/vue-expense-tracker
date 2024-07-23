@@ -4,14 +4,14 @@ import LogoEl from '../Ui-Elements/LogoEl.vue';
 import { useNavigationStore } from '../../stores/navigationStore';
 
 const navStore =  useNavigationStore()
-const navCollapse = computed(()=> navStore.hideNav)
+// const navCollapse = computed(()=> navStore.hideNav)
 </script>
 
 <template>
  <div class="w-16 h-16 rounded-full flex-center  bg-primary-600 absolute top-4 -right-8">
-    <button @click="navCollapse=!navCollapse" class="w-full h-full focus:outline-0"><i class="fa-solid fa-bars text-white -mr-6"></i></button>
+    <button @click="navStore.hideNav=!navStore.hideNav" class="w-full h-full focus:outline-0"><i class="fa-solid fa-bars text-white -mr-6"></i></button>
 </div>
-<aside class="w-72 h-full relative transition-all duration-200" :class="navCollapse ? '-ml-72': ''">
+<aside class="w-72 h-full relative transition-all duration-200" :class="navStore.hideNav ? '-ml-72': ''">
     <div class="w-full h-full bg-gradient rounded-r-2xl py-4 relative" >
         <div class="w-full h-full ">
             <!-- LOGO -->
@@ -20,7 +20,7 @@ const navCollapse = computed(()=> navStore.hideNav)
             <div class="mt-10 pb-4 border-b-[1px] mx-4 relative">
                 <!-- EDIT PROFILE BUTTON -->
                 <div class="w-6 h-6 rounded-sm text-white absolute top-0 right-0">
-                    <a routerLink="/user-profile/jenna" class="cursor-pointer w-full h-full flex-center"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <router-link to="/jenna/edit-profile" class="cursor-pointer w-full h-full flex-center"><i class="fa-regular fa-pen-to-square"></i></router-link>
                 </div>
                 <!-- USER INFO -->
                 <img class="w-24 h-24 rounded-full mx-auto ring ring-white" src="@/assets/images/user/user-07.png" alt="profile image" width="384" height="512">
@@ -33,11 +33,11 @@ const navCollapse = computed(()=> navStore.hideNav)
             <!-- MENU LIST -->
             <nav class="my-8 overflow-y-scroll text-white">
                 <ul class="menu-list">
-                    <li><a href="/dashboard" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-tv"></i> Dashboard</a></li>
-                    <li><a href="/expenses/taima" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-file-invoice-dollar"></i>Expenses</a></li>
-                    <li><a href="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-money-bill-transfer"></i> Transactions</a></li>
-                    <li><a href="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-piggy-bank"></i>Savings</a></li>
-                    <li><a href="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-chart-line"></i>Monthly Overview</a></li>
+                    <li><router-link to="/dashboard" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-tv"></i> Dashboard</router-link></li>
+                    <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-file-invoice-dollar"></i>Expenses</router-link></li>
+                    <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-money-bill-transfer"></i> Transactions</router-link></li>
+                    <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-piggy-bank"></i>Savings</router-link></li>
+                    <li><router-link to="#" class="font-semibold w-full py-2"><i class="w-6 mr-2 fa-solid fa-chart-line"></i>Monthly Overview</router-link></li>
                 </ul>
             </nav>
         </div>

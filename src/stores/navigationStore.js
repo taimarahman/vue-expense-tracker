@@ -8,7 +8,7 @@ export const useNavigationStore = defineStore('nav', {
   }),
   actions: {
     showNavbar(){
-      this.hideNav = fasle
+      this.hideNav = false
     },
     hideNavbar(){
       this.hideNav = true

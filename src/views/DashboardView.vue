@@ -2,7 +2,8 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 </script>
 <template>
-    <DefaultLayout>
+    <!-- <DefaultLayout> -->
+        <p>this is dashboard</p>
         <router-link to="/auth/login">login</router-link>
-    </DefaultLayout>
+    <!-- </DefaultLayout> -->
 </template>

@@ -19,8 +19,17 @@ const routes = [
       title: 'User Login'
     },
     path: '/auth/login',
-    name: 'userLogin',
+    name: 'user-login',
     component: () => import("../views/LoginView.vue")
+  },
+
+  {
+    meta: {
+      title: 'Update Profile'
+    },
+    path: '/:username/edit-profile',
+    name: 'edit-profile',
+    component: () => import("../views/ProfileView.vue")
   },
   
   // {
