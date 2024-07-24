@@ -42,7 +42,7 @@ onBeforeUnmount(()=> {
 })
 </script>
 <template>
-    <div class="py-12 px-12 xl:px-24 space-y-12 ">
+    <div class="page-setup space-y-12 ">
         <div class="space-y-6 text-center">
             <div class="relative inline-block mx-auto">
                 <div class="w-32 lg:w-48 h-32 lg:h-48 rounded-full overflow-hidden mx-auto ring-4 ring-primary-300">
@@ -74,6 +74,7 @@ onBeforeUnmount(()=> {
             <button class="btn-capsule widest text-secondary-600 btn-outline">Discard</button>
             <button class="btn-capsule wider btn-secondary">Save Changes</button>
         </div>
+        <div class="clear-both"></div>
     </div>
         
 </template>

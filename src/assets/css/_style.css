@@ -60,7 +60,7 @@
     }
   
     .page-setup {
-      @apply h-full p-8;
+      @apply py-12 px-12 xl:px-24;
     }
 }
 
