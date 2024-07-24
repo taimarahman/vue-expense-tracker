@@ -1,0 +1,39 @@
+@layer components {
+
+    .color-1{
+        @apply text-primary-600 bg-white
+    }
+    .color-2 {
+        @apply text-white bg-primary-600
+    }
+    .color-3 {
+        @apply text-dark bg-primary-300
+    }
+
+
+/* expense-list */
+    .expense-list .date{
+        @apply inline-block px-6 py-1 rounded-t-lg 
+    }
+
+    .expense-list .items {
+        @apply px-6 py-3 rounded rounded-tl-none shadow-1 space-y-3
+    }
+
+    .expense-list p{
+        @apply flex-between !items-end leading-4
+    }
+
+    .expense-list p .space {
+        @apply grow border-b-[1px] border-dashed
+    }
+
+    .expense-list hr {
+        @apply text-dark
+    }
+    
+    
+
+
+
+}
