@@ -60,7 +60,7 @@
     }
   
     .page-setup {
-      @apply py-12 px-12 xl:px-24;
+      @apply py-12 px-8 xl:px-18;
     }
 }
 
