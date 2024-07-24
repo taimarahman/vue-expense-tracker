@@ -21,6 +21,7 @@ const routes = [
     children: [
       { path: 'dashboard', name: 'dashboard', component: () => import("../views/pages/DashboardView.vue"), meta:{ title: 'Dashboard'}},
       { path: 'edit-profile', name: 'edit-profile', component: () => import("../views/pages/ProfileView.vue"), meta: {title: 'Update Profile'} },
+      { path: 'expenses', name: 'expenses', component: () => import("../views/pages/ExpenseView.vue"), meta: {title: 'Expenses'} },
     ],
     // meta: {
     //   title: 'Authentication'
