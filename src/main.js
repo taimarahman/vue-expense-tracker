@@ -1,12 +1,14 @@
 import './assets/css/gordita.css'
 import './assets/css/main.css'
-import '.././node_modules/vue-multiselect/dist/vue-multiselect.css'
+// import '.././node_modules/vue-multiselect/dist/vue-multiselect.css'
 import 'vue3-toastify/dist/index.css'
 import '.././node_modules/flowbite-vue/dist/index.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import 'flatpickr/dist/flatpickr.min.css'
+// import 'flatpickr/dist/flatpickr.min.css'
 import '.././node_modules/@fortawesome/fontawesome-free/css/all.min.css'
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 // import VueApexCharts from 'vue3-apexcharts'
 import axios from 'axios'
 import authService from '@/services/auth.service'
@@ -21,6 +23,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(Vue3Toastify, { autoClose: 3000, hideProgressBar: true, transition: 'slide' })
+app.component('VueDatePicker', VueDatePicker);
 // app.use(VueApexCharts)
 
 app.mount('#app')

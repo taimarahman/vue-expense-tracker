@@ -18,4 +18,18 @@
          pointer-events-none
     }
 
+
+    /* CUSTOM DATE PICKER */
+    .input-date input{
+        @apply w-full px-5 py-2 border-primary-300 focus:ring-0 focus:border-primary-600
+    }
+
+    .input-date.capsule input{
+        @apply rounded-full
+    }
+    
+    .input-date .dp__input_icon {
+        @apply right-5 left-auto
+      }
+
 }

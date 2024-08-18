@@ -1,7 +1,6 @@
 <script setup>
 import { useNavigationStore } from '../../stores/navigationStore';
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
-import DatePicker from '@/components/Ui-Elements/DatePicker.vue';
 import InputOne from '@/components/Inputs/InputOne.vue';
 import DateInput from '@/components/Inputs/DateInput.vue';
 
@@ -65,7 +64,8 @@ onBeforeUnmount(()=> {
             <InputOne type="email" v-model="profileData.email" placeholder="Email" :style="'input-capsule'" :readonly="true"/>
             <InputOne type="text" v-model="profileData.firstName" placeholder="First Name" :style="'input-capsule'"/>
             <InputOne type="text" v-model="profileData.lastName" placeholder="Last Name" :style="'input-capsule'"/>
-            <DateInput v-model="profileData.dob" placeholder="Date of birth" :style="'input-capsule'"/>
+            <DateInput placeholder="Date of birth" :style="'capsule'"/>
+            <!-- <DateInput v-model="profileData.dob" placeholder="Date of birth" :style="'input-capsule'"/> -->
             <InputOne type="text" v-model="profileData.profession" placeholder="Profession" :style="'input-capsule'"/>
             <!-- <InputOne type="date" v-model="profileData.dob" placeholder="Date of birth" :style="'input-capsule'"/> -->
             <!-- <DatePicker v-model="profileData.dob"/> -->
